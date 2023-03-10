@@ -1,0 +1,29 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+#how to declare a variable in yaml file
+
+# environment:
+#   - org_name: ${ORG_NAME}
+#   - org_domain: ${ORG_NAME}.example.com
+# use the environment variable ORG_NAME in this yaml file
+
+# ---------------------------------------------------------------------------
+# "PeerOrgs" - Definition of organizations managing peer nodes
+# ---------------------------------------------------------------------------
+PeerOrgs:
+  # ---------------------------------------------------------------------------
+  # Org3
+  # ---------------------------------------------------------------------------
+  - Name:  ${ORG_NAME}
+    Domain:  ${ORG_NAME}.example.com
+   # Domain: "${ORG_NAME}.example.com"
+    EnableNodeOUs: true
+    Template:
+      Count: 1
+      SANS:
+        - localhost
+    Users:
+      Count: 1
+

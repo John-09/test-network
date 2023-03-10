@@ -1,0 +1,7 @@
+Org:
+  ORG_NAME: Apollo
+  ORG_DOMAIN: apollo.example.com
+  ORG_MSPID: ApolloMSP
+  ORG_ADMIN_USER: admin
+  ORG_ADMIN_PASS: adminpw
+  ORG_CA_NAME: ca-apollo

@@ -1,0 +1,38 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+---
+################################################################################
+#
+#   Section: Organizations
+#
+#   - This section defines the different organizational identities which will
+#   be referenced later in the configuration.
+#
+################################################################################
+Organizations:
+    - &Apollo
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: ApolloMSP
+
+        # ID to load the MSP definition as
+        ID: ApolloMSP
+
+        MSPDir: ../organizations/peerOrganizations/Apollo.example.com/msp
+
+        Policies:
+            Readers:
+                Type: Signature
+                Rule: "OR('ApolloMSP.admin', 'ApolloMSP.peer', 'ApolloMSP.client')"
+            Writers:
+                Type: Signature
+                Rule: "OR('ApolloMSP.admin', 'ApolloMSP.client')"
+            Admins:
+                Type: Signature
+                Rule: "OR('ApolloMSP.admin')"
+            Endorsement:
+                Type: Signature
+                Rule: "OR('ApolloMSP.peer')"
